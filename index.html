@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="faviconHEnrypng.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Henry ToDo APP</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="henryLogo.png" alt="Henry ToDo App Logo" />
+        </div>
+        <div class="ostia">
+          <a target="_blank" href="https://soyhenry.com">Aplica</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <p>
+          Este sitio fue creado a partir de una homework de
+          <span>HENRY</span> para practicar la manipulación del DOM
+        </p>
+        <div id="inputContainer">
+          <input
+            type="text"
+            id="toDoInput"
+            placeholder="Añadi tu nota aqui padre!"
+          />
+          <button id="addButton"><span>AGREGAR</span></button>
+        </div>
+        <h3>Estoy vacio :(</h3>
+        <div id="toDoContainer"></div>
+      </div>
+    </main>
+    <script type="text/javascript" src="./index.js" async></script>
+  </body>
+</html>
