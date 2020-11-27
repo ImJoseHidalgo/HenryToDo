@@ -40,7 +40,7 @@ header .container .ostia a {
 /* MAIN 
    ================== */
 main {
-  min-height: calc(100vh - 9.6rem);
+  min-height: calc(100vh - 13.6rem);
   background: #000;
 }
 main p {
@@ -136,4 +136,17 @@ main #toDoContainer .toDoShell span {
 main #toDoContainer .toDoShell span.completeText {
   color: lightgrey;
   text-decoration: line-through;
+}
+/* FOOTER
+   ================= */
+footer {
+  background: #ffff01;
+}
+footer .container {
+  height: 4rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
