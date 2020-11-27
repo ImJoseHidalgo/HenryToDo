@@ -3,10 +3,10 @@ function sabe() {
     document.querySelector("h3").style.display = "none";
   }
   var indexStorage = Number(localStorage[0]);
+  var toDoContainer = document.getElementById("toDoContainer");
+
   for (i = 1; i < localStorage.length; i++) {
     if (localStorage.getItem(indexStorage)) {
-      var toDoContainer = document.querySelector("#toDoContainer");
-
       var toDoShell = document.createElement("div");
       toDoShell.classList.add("toDoShell");
 
@@ -40,6 +40,7 @@ var indexStorage = 0;
 ToDo.prototype.completeToDo = function () {
   this.complete = true;
 };
+
 function buildToDo(todo, index) {
   var toDoShell = document.createElement("div");
   toDoShell.classList.add("toDoShell");
@@ -68,9 +69,9 @@ function displayToDos() {
   var toDoContainer = document.querySelector("#toDoContainer");
   toDoContainer.innerHTML = "";
   var cosa = buildToDos(toDoItems);
-  for (var i = 0; i < cosa.length; i++) {
-    toDoContainer.appendChild(cosa[i]);
-  }
+  // for (var i = 0; i < cosa.length; i++) {
+  //   toDoContainer.appendChild(cosa[i]);
+  // }
 }
 
 function addToDo() {
@@ -80,6 +81,7 @@ function addToDo() {
   toDoItems.unshift(todo);
   input.value = "";
   document.querySelector("h3").style.display = "none";
+
   displayToDos();
 }
 
@@ -89,14 +91,16 @@ var input = document.querySelector("#toDoInput");
 button.addEventListener("click", () => {
   if (input.value !== "") {
     addToDo();
-    location.reload();
+    sabe();
+    // location.reload();
   }
 });
 
 input.addEventListener("keyup", function (event) {
   if (event.keyCode === 13 && input.value !== "") {
     addToDo();
-    location.reload();
+    sabe();
+    // location.reload();
   }
 });
 
