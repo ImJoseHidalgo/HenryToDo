@@ -1,5 +1,8 @@
 var toDoContainer = document.getElementById("toDoContainer");
 function sabe() {
+  if (localStorage.length === 0) {
+    localStorage.setItem("0", "0");
+  }
   if (localStorage.length > 1) {
     document.querySelector("h3").style.display = "none";
   }
