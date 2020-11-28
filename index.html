@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="faviconHEnrypng.png" />
     <link rel="stylesheet" href="style.css" />
-    <title>Henry ToDo APP</title>
+    <title>Henry Notes</title>
+    <meta
+      name="description"
+      content="Sitio creado con el fin de practicar lo aprendido en HENRY :)"
+    />
   </head>
   <body>
     <header>
@@ -14,25 +18,27 @@
           <img src="henryLogo.png" alt="Henry ToDo App Logo" />
         </div>
         <div class="ostia">
-          <a target="_blank" href="https://soyhenry.com">Aplica</a>
+          <a target="_blank" href="https://soyhenry.com">Descarga La App</a>
         </div>
       </div>
     </header>
     <main>
       <div class="container">
         <p>
-          Este sitio fue creado a partir de una homework de
-          <span>HENRY</span> para practicar la manipulación del DOM
+          Este sitio usa el <span>LocalStorage</span> del navegador para
+          alamacenar las notas creadas, de modo que podras acceder a ellas
+          cuando quieras siempre y cuando uses el mismo navegador para acceder
+          al sitio.
         </p>
         <div id="inputContainer">
           <input
             type="text"
             id="toDoInput"
-            placeholder="Añadi tu nota aqui padre!"
+            placeholder="Presiona Enter para guardar ;)"
           />
           <button id="addButton"><span>AGREGAR</span></button>
         </div>
-        <h3>Estoy vacio :(</h3>
+        <h3>Añadí una nota ☝️</h3>
         <div id="toDoContainer"></div>
       </div>
     </main>

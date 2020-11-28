@@ -24,6 +24,21 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
+header .container .logo {
+  position: relative;
+}
+header .container .logo::after {
+  content: "Notes";
+  right: -63%;
+  bottom: -0.4rem;
+  color: #fff;
+  font-size: 2.4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  position: absolute;
+}
 header .container .logo img {
   width: 12.7rem;
 }
@@ -42,6 +57,7 @@ header .container .ostia a {
 main {
   min-height: calc(100vh - 13.6rem);
   background: #000;
+  padding-bottom: 3rem;
 }
 main p {
   text-align: center;
@@ -49,7 +65,7 @@ main p {
   font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  width: 40%;
+  width: 60%;
   margin: auto;
   padding: 3rem 0;
 }
@@ -72,9 +88,12 @@ main p span::after {
 main #inputContainer {
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
+  padding: 3rem;
   background: #fff;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 2rem;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 main #inputContainer #toDoInput {
   background: #fff;
@@ -82,61 +101,83 @@ main #inputContainer #toDoInput {
   border-radius: 0.8rem;
   font-size: 1.6rem;
   outline: none;
-  width: 75%;
+  width: 100%;
   padding-left: 10px;
 }
 input::-webkit-input-placeholder {
-  color: #000;
+  color: #505050;
 }
 
 main #inputContainer #addButton {
   background: #000;
   color: #fff;
   font-size: 1.4rem;
+  font-weight: 600;
   padding: 0 2rem;
   height: 3.5rem;
-  border-radius: 0.6rem;
+  border: none;
+  border-radius: 0.8rem;
   margin-left: 10px;
   cursor: pointer;
 }
 main h3 {
   background: #fff;
   text-align: center;
-  font-size: 2.5rem;
-  padding: 3rem 0;
-  border-radius: 0 0 0.8rem 0.8rem;
+  font-size: 2rem;
+  padding: 3rem;
+  width: 60%;
+  margin: auto;
+  border-radius: 2rem;
 }
 
 main #toDoContainer {
-  background: #fff;
-  width: 100%;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  cursor: pointer;
-  border-radius: 0 0 0.5rem 0.5rem;
+  align-items: center;
+  flex-direction: column;
 }
 
 main #toDoContainer .toDoShell {
-  width: 650px;
-  min-height: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  width: 100%;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 2rem;
   background: #fff;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  font-size: 20px;
-  padding: 5px;
+  padding: 3rem;
+  font-size: 1.6rem;
+  border-radius: 2rem;
+  position: relative;
 }
 
 main #toDoContainer .toDoShell span {
-  width: 90%;
+  font-size: 2rem;
+  font-weight: 600;
 }
-main #toDoContainer .toDoShell span.completeText {
-  color: lightgrey;
-  text-decoration: line-through;
+
+main #toDoContainer .toDoShell .toDoDelete {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  width: 10rem;
+  height: 100%;
+  border-radius: 0 2rem 2rem 0;
+  background: #ffff01;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(1, 0, 0, 1);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: right;
 }
+main #toDoContainer .toDoShell:hover .toDoDelete {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 /* FOOTER
    ================= */
 footer {
@@ -149,4 +190,102 @@ footer .container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* SCROLLBAR
+   ================= */
+body::-webkit-scrollbar {
+  width: 0.6rem;
+}
+body::-webkit-scrollbar-track {
+  background: #000;
+}
+body::-webkit-scrollbar-thumb {
+  background: #ffff01;
+}
+body::-webkit-scrollbar-thumb:active {
+  background: #fff;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 80%;
+  }
+  /* HEADER
+   ================= */
+  header .container {
+    height: 6.5rem;
+    align-items: flex-start;
+  }
+  header .container .logo {
+    position: relative;
+    padding-top: 3rem;
+  }
+  header .container .ostia a {
+    display: none;
+  }
+  /* MAIN 
+   ================== */
+  main {
+    min-height: calc(100vh - 10.5rem);
+    background: #000;
+    padding-bottom: 3rem;
+  }
+  main p {
+    font-size: 1.3em;
+    width: 100%;
+    padding: 2rem 0 2rem;
+  }
+  main #inputContainer {
+    flex-direction: column;
+    padding: 2rem;
+    width: 100%;
+    border-radius: 1.5rem;
+  }
+  main #inputContainer #toDoInput {
+    border-radius: 0.8rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  main #inputContainer #addButton {
+    margin-left: 0;
+  }
+  main h3 {
+    padding: 2rem;
+    width: 100%;
+    font-size: 1.6rem;
+  }
+  main #toDoContainer .toDoShell {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 2rem 6rem 2rem 2rem;
+    border-radius: 1.5rem;
+  }
+  main #toDoContainer .toDoShell span {
+    font-size: 1.6rem;
+  }
+  main #toDoContainer .toDoShell .toDoDelete {
+    width: 5rem;
+    font-size: 1.2rem;
+    opacity: 1;
+    transform: scaleX(1);
+    border-radius: 0 1.5rem 1.5rem 0;
+  }
+  /* FOOTER
+   ================= */
+  footer .container {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .container {
+    max-width: 90%;
+  }
+  header .container .logo {
+    padding-top: 2rem;
+  }
+  main p {
+    padding: 1rem 0 2rem;
+  }
 }
