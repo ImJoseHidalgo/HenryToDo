@@ -30,7 +30,7 @@ header .container .logo {
 header .container .logo::after {
   content: "Notes";
   right: -63%;
-  bottom: -0.4rem;
+  bottom: -0.25rem;
   color: #fff;
   font-size: 2.4rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
